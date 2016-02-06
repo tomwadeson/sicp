@@ -2,34 +2,34 @@
 
 (define-test (ch01-01)
   "Exercise 1.1"
-  (check (= 10 10))
+  (assert-= 10 10)
 
-  (check (= 12 (+ 5 3 4)))
+  (assert-= 12 (+ 5 3 4))
 
-  (check (= 8 (- 9 1)))
+  (assert-= 8 (- 9 1))
 
-  (check (= 3 (/ 6 2)))
+  (assert-= 3 (/ 6 2))
 
-  (check (= 6 (+ (* 2 4) (- 4 6))))
+  (assert-= 6 (+ (* 2 4) (- 4 6)))
 
   (define a 3)
   (define b (+ a 1))
 
-  (check (= 19 (+ a b (* a b))))
+  (assert-= 19 (+ a b (* a b)))
 
   (assert-false (= a b))
   
-  (check (=
-    a
-    (if (and (> b a) (< b (* a b)))
-      a
-      b)))
+  (assert-= 
+    a 
+    (if (and (> b a) (< b (* a b))) 
+      a 
+      b))
 
-  (check (=
+  (assert-= 
     16
-    (cond ((= a 4) 6)
-          ((= b 4) (+ 6 7 a)) ; 16
-          (else 25))))
+    (cond ((= a 4) 6) 
+          ((= b 4) (+ 6 7 a)) ; 16 
+          (else 25)))
 
   (assert-=
     6
